@@ -1,0 +1,161 @@
+{"frames": {
+
+"Aladdin_Hit0.png":
+{
+	"frame": {"x":0,"y":0,"w":600,"h":600},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":600,"h":600},
+	"sourceSize": {"w":600,"h":600},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Aladdin_Hit1.png":
+{
+	"frame": {"x":600,"y":0,"w":600,"h":600},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":600,"h":600},
+	"sourceSize": {"w":600,"h":600},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Aladdin_Hit2.png":
+{
+	"frame": {"x":1200,"y":0,"w":600,"h":600},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":600,"h":600},
+	"sourceSize": {"w":600,"h":600},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Aladdin_Idle0.png":
+{
+	"frame": {"x":0,"y":600,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Aladdin_Idle1.png":
+{
+	"frame": {"x":300,"y":600,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Aladdin_Idle2.png":
+{
+	"frame": {"x":600,"y":600,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20005.png":
+{
+	"frame": {"x":900,"y":600,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20013.png":
+{
+	"frame": {"x":1200,"y":600,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20021.png":
+{
+	"frame": {"x":1500,"y":600,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20029.png":
+{
+	"frame": {"x":0,"y":900,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20037.png":
+{
+	"frame": {"x":300,"y":900,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20045.png":
+{
+	"frame": {"x":600,"y":900,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20053.png":
+{
+	"frame": {"x":900,"y":900,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20061.png":
+{
+	"frame": {"x":1200,"y":900,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20069.png":
+{
+	"frame": {"x":1500,"y":900,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+},
+"Civ_SSR_Aladdin_00_Skill20077.png":
+{
+	"frame": {"x":0,"y":1200,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"anchor": {"x":0.5,"y":0.5}
+}},
+"animations": {
+	"Aladdin_Hit": ["Aladdin_Hit0.png","Aladdin_Hit1.png","Aladdin_Hit2.png"],
+	"Aladdin_Idle": ["Aladdin_Idle0.png","Aladdin_Idle1.png","Aladdin_Idle2.png"],
+	"Civ_SSR_Aladdin_00_Skill": ["Civ_SSR_Aladdin_00_Skill20005.png","Civ_SSR_Aladdin_00_Skill20013.png","Civ_SSR_Aladdin_00_Skill20021.png","Civ_SSR_Aladdin_00_Skill20029.png","Civ_SSR_Aladdin_00_Skill20037.png","Civ_SSR_Aladdin_00_Skill20045.png","Civ_SSR_Aladdin_00_Skill20053.png","Civ_SSR_Aladdin_00_Skill20061.png","Civ_SSR_Aladdin_00_Skill20069.png","Civ_SSR_Aladdin_00_Skill20077.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "Aladdin.png",
+	"format": "RGBA8888",
+	"size": {"w":1800,"h":1500},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d2ffe020a1a71e90a11aacb2816d6caf:3ff875b5f046073d1b69521f980a81c2:68657ebca5d680ae374ef709f5956580$"
+}
+}
