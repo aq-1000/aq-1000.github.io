@@ -147,7 +147,7 @@
 "animations": {
 	"Aladdin_Hit": ["Aladdin_Hit0.png","Aladdin_Hit1.png","Aladdin_Hit2.png"],
 	"Aladdin_Idle": ["Aladdin_Idle0.png","Aladdin_Idle1.png","Aladdin_Idle2.png"],
-	"Civ_SSR_Aladdin_00_Skill": ["Civ_SSR_Aladdin_00_Skill20005.png","Civ_SSR_Aladdin_00_Skill20013.png","Civ_SSR_Aladdin_00_Skill20021.png","Civ_SSR_Aladdin_00_Skill20029.png","Civ_SSR_Aladdin_00_Skill20037.png","Civ_SSR_Aladdin_00_Skill20045.png","Civ_SSR_Aladdin_00_Skill20053.png","Civ_SSR_Aladdin_00_Skill20061.png","Civ_SSR_Aladdin_00_Skill20069.png","Civ_SSR_Aladdin_00_Skill20077.png"]
+	"Aladdin_Skill": ["Civ_SSR_Aladdin_00_Skill20005.png","Civ_SSR_Aladdin_00_Skill20013.png","Civ_SSR_Aladdin_00_Skill20021.png","Civ_SSR_Aladdin_00_Skill20029.png","Civ_SSR_Aladdin_00_Skill20037.png","Civ_SSR_Aladdin_00_Skill20045.png","Civ_SSR_Aladdin_00_Skill20053.png","Civ_SSR_Aladdin_00_Skill20061.png","Civ_SSR_Aladdin_00_Skill20069.png","Civ_SSR_Aladdin_00_Skill20077.png"]
 },
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
