@@ -16,36 +16,52 @@ Role.prototype = {
     _Scale:1.0,
     _Idle:null,
     _Hit:null,
+    _Skill:null,
+    _Walk:null,
+    _Effect:null,
+    _SkillUI0:null,
+    _SkillUI1:null,
+    _SkillUI2:null,
+    _BloodBar:null,
 
     Hide:function()
     {
-        if (typeof this._Idle != "undefined") {
+        if (typeof this._Idle != "undefined" && this._Idle != null) {
             this._Idle.visible = false;
         }
-        if (typeof this._Hit != "undefined") {
+        if (typeof this._Hit != "undefined" && this._Hit != null) {
             this._Hit.visible = false;
         }
-        if (typeof this._Skill != "undefined") {
+        if (typeof this._Skill != "undefined" && this._Skill != null) {
             this._Skill.visible = false;
         }
-        if (typeof this._Walk != "undefined") {
+        if (typeof this._Walk != "undefined" && this._Walk != null) {
             this._Walk.visible = false;
         }
-        if (typeof this._Effect != "undefined") {
+        if (typeof this._Effect != "undefined" && this._Effect != null) {
             this._Effect.visible = false;
         }
     },
 
     Hit:function()
     {
-        // if (typeof this.hit == "undefined" || typeof this.idle == "undefined") {
-        //     return;
-        // }
         this.Hide();
         this._Hit.visible = true;
         this._Hit.gotoAndPlay(0);
         this._Hit.onComplete = function(){ 
             this._Hit.visible = false; 
+            this._Idle.visible = true;
+            this._Idle.gotoAndPlay(0);
+        }.bind(this);
+    },
+
+    Skill:function()
+    {
+        this.Hide();
+        this._Skill.visible = true;
+        this._Skill.gotoAndPlay(0);
+        this._Skill.onComplete = function(){ 
+            this._Skill.visible = false; 
             this._Idle.visible = true;
             this._Idle.gotoAndPlay(0);
         }.bind(this);
@@ -71,8 +87,8 @@ Role.prototype = {
             ani.loop = true;
             this._Idle = ani;
             this._Idle.interactive = true;
-//            this._Idle.click = this.Hit.bind(this);
-            this._Idle.touchend = this.Hit.bind(this);
+            this._Idle.click = this.Skill.bind(this);
+            this._Idle.touchend = this.Skill.bind(this);
         } else if (aniName == "Hit") {
             this._Hit = ani;
         } else if (aniName == "Skill") {
@@ -82,5 +98,21 @@ Role.prototype = {
         } else if (aniName == "Effect") {
             this._Effect = ani;
         }
+    },
+
+    CreateSkillUI:function()
+    {
+        this._SkillUI0 = new PIXI.Sprite(this._Sheet.textures[this.Name + "_Skill_UI0.png"]);
+        this._SkillUI1 = new PIXI.Sprite(this._Sheet.textures[this.Name + "_Skill_UI1.png"]);
+        this._SkillUI2 = new PIXI.Sprite(this._Sheet.textures[this.Name + "_Skill_UI2.png"]);
+    },
+
+    CreateBloodBar:function(sprite)
+    {
+        this._BloodBar = sprite;
+        this._BloodBar.anchor.set(0.5);
+        this._BloodBar.x = this._X;
+        this._BloodBar.y = this._Y - this._Idle.height * 0.2;
+        app.stage.addChild(this._BloodBar);
     },
 }

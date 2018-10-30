@@ -15,10 +15,23 @@ document.body.appendChild(app.view);
 //app.renderer.autoResize = true;
 //app.renderer.resize(window.innerWidth, window.innerHeight);
 
+let aladdin = null;
+let aladdin2 = null;
+let skillUI = null;
+let victory = null;
+let activation = null;
+let target = null;
+
 // 加载静态图
 PIXI.loader
     .add("Assets/Images/Background.png")
-    .add("Assets/Images/Aladdin.json")
+    .add("Assets/Images/SkillUI.png")
+    .add("Assets/Images/NoSkill.png")
+    .add("Assets/Images/Victory.png")
+    .add("Assets/Images/BloodBar.png")
+    .add("Assets/Images/Activation.png")
+    .add("Assets/Images/Target.png")
+    .add("Assets/Images/Roles/Aladdin.json")
     .on("progress", function(){
         // do something when loading
     })
@@ -27,11 +40,11 @@ PIXI.loader
 // 背景图加载完成
 function onAssetsLoaded()
 {
+    // 背景图
     let backgroundSprite = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/Background.png"].texture);
     app.stage.addChild(backgroundSprite);
 
-    // 调整背景图，铺满全屏，图片居中
-    gScale = windowWidth / backgroundSprite.width;
+    gScale = windowWidth / backgroundSprite.width;  // 调整背景图，铺满全屏，图片居中
     backgroundSprite.width = windowWidth;
     backgroundSprite.height = backgroundSprite.height * gScale;
     if (backgroundSprite.height > windowHeight) 
@@ -39,40 +52,62 @@ function onAssetsLoaded()
         backgroundSprite.y -= (backgroundSprite.height - windowHeight) / 2;
     }
 
-    // let aladdinSheets = PIXI.loader.resources["Assets/Images/Aladdin.json"].spritesheet;
-    // let aladdinIdle = new PIXI.extras.AnimatedSprite(aladdinSheets.animations["Aladdin_Idle"]);
-    // aladdinIdle.x = app.screen.width / 2;
-    // aladdinIdle.y = app.screen.height / 2;
-    // //   aladdinIdle.anchor.set(0.5);
-    // aladdinIdle.animationSpeed = 0.05;
-    // aladdinIdle.loop = true;
-    // //    aladdinIdle.onComplete = function(){ aladdinIdle.visible = false; };
-    // //    aladdinIdle.play();
-    // aladdinIdle.visible = false;
-    // app.stage.addChild(aladdinIdle);
-    var sheet = PIXI.loader.resources["Assets/Images/Aladdin.json"].spritesheet;
-    var aladdin = new Role("Aladdin", sheet, windowWidth / 8, windowHeight / 2, gScale, gScale);
+    // aladdin
+    var sheet = PIXI.loader.resources["Assets/Images/Roles/Aladdin.json"].spritesheet;
+    aladdin = new Role("Aladdin", sheet, windowWidth / 8, windowHeight / 2, gScale, gScale);
     aladdin.CreateAnimation("Idle", 0.05);
     aladdin.CreateAnimation("Hit", 0.05);
+    aladdin.CreateAnimation("Skill", 0.1);
+    aladdin.CreateAnimation("Effect", 0.1);
+    aladdin.CreateSkillUI();
+    aladdin.CreateBloodBar(new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar.png"].texture));
 
-    sheet = PIXI.loader.resources["Assets/Images/Aladdin.json"].spritesheet;
-    var aladdin2 = new Role("Aladdin", sheet, windowWidth * 7 / 8, windowHeight / 2, -gScale, gScale);
+    // aladdin2
+    sheet = PIXI.loader.resources["Assets/Images/Roles/Aladdin.json"].spritesheet;
+    aladdin2 = new Role("Aladdin", sheet, windowWidth * 7 / 8, windowHeight / 2, -gScale, gScale);
     aladdin2.CreateAnimation("Idle", 0.05);
     aladdin2.CreateAnimation("Hit", 0.05);
-    // aladdin2.CreateAnimation("Idle", 0.05, true, true);
-    // aladdin2.CreateAnimation("Hit", 0.05, false, false);
+    aladdin2.CreateAnimation("Skill", 0.1);
+    aladdin2.CreateAnimation("Effect", 0.1);
+    aladdin2.CreateBloodBar(new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar.png"].texture));
 
-    // sheet = PIXI.loader.resources["Assets/Images/Aladdin.json"].spritesheet;
-    // var aladdin3 = new Role("Aladdin", sheet, app.screen.width - 150, app.screen.height / 2);
-    // aladdin3.CreateAnimation("Skill", 0.05, true, true);
+    // 激活目标
+    activation = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/Activation.png"].texture);
+    target = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/Target.png"].texture);
+    activation.anchor.set(0.5);
+    target.anchor.set(0.5);
+    app.stage.addChild(activation);
+    app.stage.addChild(target);
 
-    // let aladdinAttack = new PIXI.extras.AnimatedSprite(aladdinSheets.animations["Civ_SSR_Aladdin_00_Skill"]);
-    // aladdinAttack.x = app.screen.width / 2;
-    // aladdinAttack.y = app.screen.height / 2;
-    // aladdinAttack.anchor.set(0.5);
-    // aladdinAttack.animationSpeed = 0.1;
-    // aladdinAttack.loop = false;
-    // aladdinAttack.onComplete = function(){ aladdinAttack.visible = false; aladdinIdle.visible = true; aladdinIdle.play();};
-    // aladdinAttack.play();
-    // app.stage.addChild(aladdinAttack);
+    // 技能UI
+    skillUI = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/SkillUI.png"].texture);
+    skillUI.x = windowWidth - skillUI.width;
+    skillUI.y = windowHeight - skillUI.height;
+    app.stage.addChild(skillUI);
+    UpdateSkillUI(aladdin);
+}
+
+function UpdateSkillUI(obj)
+{
+    skillUI.removeChildren();
+    if (null != obj._SkillUI0) {
+        skillUI.addChild(obj._SkillUI0);
+        obj._SkillUI0.x += skillUI.width * 0.2;
+        obj._SkillUI0.y += skillUI.height * 0.65;
+    }
+    if (null != obj._SkillUI1) {
+        skillUI.addChild(obj._SkillUI1);
+        obj._SkillUI1.x = skillUI.width * 0.5;
+        obj._SkillUI1.y += skillUI.height * 0.65;
+    }
+    if (null != obj._SkillUI2) {
+        skillUI.addChild(obj._SkillUI2);
+        obj._SkillUI2.x += skillUI.width * 0.8;
+        obj._SkillUI2.y += skillUI.height * 0.65;
+    }
+
+    activation.x = obj._X;
+    activation.y = obj._Y - obj._Idle.height * 0.25;
+    target.x = aladdin2._X;
+    target.y = aladdin2._Y - aladdin2._Idle.height * 0.25;
 }
