@@ -52,13 +52,15 @@ function onAssetsLoaded()
     // app.stage.addChild(aladdinIdle);
     var sheet = PIXI.loader.resources["Assets/Images/Aladdin.json"].spritesheet;
     var aladdin = new Role("Aladdin", sheet, windowWidth / 8, windowHeight / 2, gScale, gScale);
-    aladdin.CreateAnimation("Idle", 0.05, true, true);
-    aladdin.CreateAnimation("Hit", 0.05, false, false);
+    aladdin.CreateAnimation("Idle", 0.05);
+    aladdin.CreateAnimation("Hit", 0.05);
 
     sheet = PIXI.loader.resources["Assets/Images/Aladdin.json"].spritesheet;
     var aladdin2 = new Role("Aladdin", sheet, windowWidth * 7 / 8, windowHeight / 2, -gScale, gScale);
-    aladdin2.CreateAnimation("Idle", 0.05, true, true);
-    aladdin2.CreateAnimation("Hit", 0.05, false, false);
+    aladdin2.CreateAnimation("Idle", 0.05);
+    aladdin2.CreateAnimation("Hit", 0.05);
+    // aladdin2.CreateAnimation("Idle", 0.05, true, true);
+    // aladdin2.CreateAnimation("Hit", 0.05, false, false);
 
     // sheet = PIXI.loader.resources["Assets/Images/Aladdin.json"].spritesheet;
     // var aladdin3 = new Role("Aladdin", sheet, app.screen.width - 150, app.screen.height / 2);
