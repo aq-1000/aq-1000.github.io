@@ -71,7 +71,8 @@ Role.prototype = {
             ani.loop = true;
             this._Idle = ani;
             this._Idle.interactive = true;
-            this._Idle.click = this.Hit.bind(this);
+//            this._Idle.click = this.Hit.bind(this);
+            this._Idle.touchend = this.Hit.bind(this);
         } else if (aniName == "Hit") {
             this._Hit = ani;
         } else if (aniName == "Skill") {
