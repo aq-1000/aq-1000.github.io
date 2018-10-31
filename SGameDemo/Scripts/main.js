@@ -129,6 +129,7 @@ function onAssetsLoaded()
     skillUI.y = BGHeight - skillUI.height;
     skillUI.interactive = true;
     skillUI.click = SelectSkill;
+    skillUI.touchend = SelectSkill;
     background.addChild(skillUI);
 
     // 胜利
