@@ -1,10 +1,12 @@
-function Role(name, parent, sheet, our, x, y){
+function Role(name, parent, sheet, our, x, y, maxhp){
     this._Name = name;
     this._Parent = parent;
     this._Sheet = sheet;
     this._Our = our;
     this._X = x;
     this._Y = y;
+    this._MAXHP = maxhp;
+    this._HP = maxhp;
 }
 
 Role.prototype = {
@@ -14,6 +16,8 @@ Role.prototype = {
     _Our:true,
     _X:0,
     _Y:0,
+    _MAXHP:1,
+    _HP:1,
     _Idle:null,
     _Hit:null,
     _Skill:null,
@@ -24,6 +28,7 @@ Role.prototype = {
     _SkillUI1:null,
     _SkillUI2:null,
     _BloodBar:null,
+    _InterBar:null,
 
     Hide:function()
     {
@@ -107,12 +112,18 @@ Role.prototype = {
         this._SkillUI2 = new PIXI.Sprite(this._Sheet.textures[this._Name + "_UI2.png"]);
     },
 
-    CreateBloodBar:function(sprite)
+    CreateBloodBar:function()
     {
-        this._BloodBar = sprite;
-        this._BloodBar.anchor.set(0.5);
-        this._BloodBar.x = this._X;
-        this._BloodBar.y = this._Y - this._Idle.height * 0.2;
+        this._BloodBar = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar0.png"].texture);
+        this._BloodBar.x = this._X - this._BloodBar.width * 0.5;
+        this._BloodBar.y = this._Y - this._Idle.height * 0.22;
         this._Parent.addChild(this._BloodBar);
+
+        if (this._Our) {
+            this._InterBar = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar1.png"].texture);
+        } else {
+            this._InterBar = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar2.png"].texture);
+        }
+        this._BloodBar.addChild(this._InterBar);
     },
 }

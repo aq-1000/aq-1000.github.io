@@ -30,13 +30,16 @@ let aniSpeed = 0.06;
 let canClick = true;
 let activateRole = null;
 let targetRole = null;
+let damageText = null;  // 伤害飘字
 
 // 加载静态图
 PIXI.loader
     .add("Assets/Images/Background.png")
     .add("Assets/Images/SkillUI.png")
     .add("Assets/Images/Victory.png")
-    .add("Assets/Images/BloodBar.png")
+    .add("Assets/Images/BloodBar0.png")
+    .add("Assets/Images/BloodBar1.png")
+    .add("Assets/Images/BloodBar2.png")
     .add("Assets/Images/Activation.png")
     .add("Assets/Images/Target.png")
     .add("Assets/Images/Our.json")
@@ -65,53 +68,59 @@ function onAssetsLoaded()
     gScale = background.width / BGWidth;
     background.height = background.height * gScale;
     background.x += (windowWidth - background.width) * 0.5;     // 图片水平居中
-    background.y -= (background.height - windowHeight);     // 图片底部和窗口持平
+    if (background.height < windowHeight) {
+        background.y += (windowHeight - background.height) * 0.5;
+    } else {
+        background.y -= (background.height - windowHeight);     // 图片底部和窗口持平
+    }
 
     // aladdin
     var sheet = PIXI.loader.resources["Assets/Images/Our.json"].spritesheet;
-    aladdin = new Role("Aladdin", background, sheet, true, BGWidth * 0.15, BGHeight * 0.557);
+    aladdin = new Role("Aladdin", background, sheet, true, BGWidth * 0.15, BGHeight * 0.6, 1024 * 1.5);
     aladdin.CreateAnimation("Idle", aniSpeed);
     aladdin.CreateAnimation("Hit", aniSpeed);
+    aladdin.CreateAnimation("Dead", aniSpeed);
     aladdin.CreateAnimation("Skill", aniSpeed * 2);
     aladdin.CreateAnimation("Effect", aniSpeed * 4);
     aladdin.CreateSkillUI();
-    aladdin.CreateBloodBar(new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar.png"].texture));
+    aladdin.CreateBloodBar();
     aladdin._Idle.click = SelectAladdin;
     aladdin._Idle.touchend = SelectAladdin;
 
     // sinbad
-    sinbad = new Role("Sinbad", background, sheet, true, BGWidth * 0.15, BGHeight * 0.725);
+    sinbad = new Role("Sinbad", background, sheet, true, BGWidth * 0.15, BGHeight * 0.8, 1024 * 1.5);
     sinbad.CreateAnimation("Idle", aniSpeed);
     sinbad.CreateAnimation("Hit", aniSpeed);
     sinbad.CreateAnimation("Skill", aniSpeed * 2);
     sinbad.CreateSkillUI();
-    sinbad.CreateBloodBar(new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar.png"].texture));
+    sinbad.CreateBloodBar();
     sinbad._Idle.click = SelectSinbad;
     sinbad._Idle.touchend = SelectSinbad;
 
     // serpentQueen
     sheet = PIXI.loader.resources["Assets/Images/Enemy.json"].spritesheet;
-    serpentQueen = new Role("SerpentQueen", background, sheet, false, BGWidth * 0.85, BGHeight * 0.5);
+    serpentQueen = new Role("SerpentQueen", background, sheet, false, BGWidth * 0.85, BGHeight * 0.55, 1024 * 1.5);
     serpentQueen.CreateAnimation("Idle", aniSpeed);
     serpentQueen.CreateAnimation("Hit", aniSpeed);
-    serpentQueen.CreateBloodBar(new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar.png"].texture));
+    serpentQueen.CreateBloodBar();
     serpentQueen._Idle.click = SelectSerpentQueen;
     serpentQueen._Idle.touchend = SelectSerpentQueen;
     
     // anubis
-    anubis = new Role("Anubis", background, sheet, false, BGWidth * 0.85, BGHeight * 0.65);
+    anubis = new Role("Anubis", background, sheet, false, BGWidth * 0.85, BGHeight * 0.68, 65535 * 1.2);
     anubis.CreateAnimation("Idle", aniSpeed);
     anubis.CreateAnimation("Hit", aniSpeed);
+    anubis.CreateAnimation("Dead", aniSpeed);
     anubis.CreateAnimation("Skill", aniSpeed * 2);
-    anubis.CreateBloodBar(new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar.png"].texture));
+    anubis.CreateBloodBar();
     anubis._Idle.click = SelectAnubis;
     anubis._Idle.touchend = SelectAnubis;
 
     // shedu
-    shedu = new Role("Shedu", background, sheet, false, BGWidth * 0.85, BGHeight * 0.8);
+    shedu = new Role("Shedu", background, sheet, false, BGWidth * 0.85, BGHeight * 0.825, 1024 * 1.5);
     shedu.CreateAnimation("Idle", aniSpeed);
     shedu.CreateAnimation("Hit", aniSpeed);
-    shedu.CreateBloodBar(new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar.png"].texture));
+    shedu.CreateBloodBar();
     shedu._Idle.click = SelectShedu;
     shedu._Idle.touchend = SelectShedu;
 
@@ -144,25 +153,32 @@ function onAssetsLoaded()
 
     SelectAladdin();
     SelectAnubis();
+
+    // 伤害飘字
+    damageText = new PIXI.Text("-65535", {fontFamily: "Arial", fontSize: 22, fill: "red"});
+    damageText.visible = false;
+    damageText.anchor.set(0.5);
+    background.addChild(damageText);
 }
 
 function UpdateSkillUI(obj)
 {
     skillUI.removeChildren();
+    let height = skillUI.height * 0.1;
     if (null != obj._SkillUI0) {
         skillUI.addChild(obj._SkillUI0);
         obj._SkillUI0.x = skillUI.width * 0.08;
-        obj._SkillUI0.y = skillUI.height * 0.378;
+        obj._SkillUI0.y = height;
     }
     if (null != obj._SkillUI1) {
         skillUI.addChild(obj._SkillUI1);
         obj._SkillUI1.x = skillUI.width * 0.39;
-        obj._SkillUI1.y = skillUI.height * 0.378;
+        obj._SkillUI1.y = height;
     }
     if (null != obj._SkillUI2) {
         skillUI.addChild(obj._SkillUI2);
         obj._SkillUI2.x = skillUI.width * 0.697;
-        obj._SkillUI2.y = skillUI.height * 0.378;
+        obj._SkillUI2.y = height;
     }
 
     activateArrow.x = obj._X;
@@ -241,7 +257,6 @@ requestAnimationFrame(animate);
 
 function PlayOurEffect()
 {
-    aladdin._Effect.visible = true;
     aladdin._Effect.gotoAndPlay(0);
     var coords = { x: activateRole._X, y: activateRole._Y }; // Start at (0, 0)
     var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
@@ -252,9 +267,12 @@ function PlayOurEffect()
         //    box.style.setProperty('transform', 'translate(' + coords.x + 'px, ' + coords.y + 'px)');
             aladdin._Effect.x = coords.x;
             aladdin._Effect.y = coords.y;
+            aladdin._Effect.visible = true;
         })
         .onComplete(function() {
             TargetHit();
+            aladdin._Effect.x = aladdin._X;
+            aladdin._Effect.y = aladdin._Y;
             aladdin._Effect.visible = false;
         })
         .start(); // Start the tween immediately.
@@ -262,8 +280,8 @@ function PlayOurEffect()
 
 function PlayEnemyEffect()
 {
-    aladdin._Effect.visible = true;
-    aladdin._Effect.gotoAndPlay(0);
+    // aladdin._Effect.visible = true;
+    // aladdin._Effect.gotoAndPlay(0);
     var coords = { x: anubis._X, y: anubis._Y }; // Start at (0, 0)
     var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
         .to({ x: activateRole._X, y: activateRole._Y }, 500) // Move to (300, 200) in 1 second.
@@ -271,12 +289,10 @@ function PlayEnemyEffect()
         .onUpdate(function() { // Called after tween.js updates 'coords'.
             // Move 'box' to the position described by 'coords' with a CSS translation.
         //    box.style.setProperty('transform', 'translate(' + coords.x + 'px, ' + coords.y + 'px)');
-            aladdin._Effect.x = coords.x;
-            aladdin._Effect.y = coords.y;
+            anubis._Skill.x = coords.x;
+            anubis._Skill.y = coords.y;
         })
         .onComplete(function() {
-            aladdin._Effect.visible = false;
-
             anubis._Skill.visible = false; 
             anubis._Idle.visible = true;
             activateRole.Hit();
@@ -288,22 +304,79 @@ function PlayEnemyEffect()
 function TargetHit()
 {
     targetRole.Hit();
+    ShowDamege("-65535", targetRole);
+    targetRole._HP -= 65535;
+    if (targetRole._HP <= 0) {
+        targetRole._InterBar.scale.x = 0;
+    } else {
+        targetRole._InterBar.scale.x = targetRole._HP / targetRole._MAXHP;
+    }
     targetRole._Hit.onComplete = function(){ 
-        targetRole._Hit.visible = false; 
-        targetRole._Idle.visible = true;
-        targetRole._Idle.gotoAndPlay(0);
+        targetRole._Hit.visible = false;
+        if (targetRole._HP <= 0) {
+            targetRole._BloodBar.visible = false;
+            if (targetRole._Dead != null)
+            {
+                targetRole._Dead.visible = true;
+                targetRole._Dead.gotoAndPlay(0);
+            }
+        } else {
+            targetRole._InterBar.scale.x = targetRole._HP / targetRole._MAXHP;
+            targetRole._Idle.visible = true;
+            targetRole._Idle.gotoAndPlay(0);   
+        }
         
         // anubis反击
         if (anubis._Idle.visible)
         {
             anubis.Skill();
+            var coords = { x: anubis._X, y: anubis._Y };
+            var tween = new TWEEN.Tween(coords)
+                .to({ x: activateRole._X + activateRole._Idle.width * 0.5, y: activateRole._Y }, 500)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .onUpdate(function() {
+                    anubis._Skill.x = coords.x;
+                    anubis._Skill.y = coords.y;
+                })
+                .onComplete(function() {
+                    activateRole.Hit();
+                    ShowDamege("-1024", activateRole);
+                    canClick = true;
+                })
+                .start();
+
             anubis._Skill.onComplete = function(){ 
+                anubis._Skill.x =  anubis._X;
+                anubis._Skill.y =  anubis._Y;
                 anubis._Skill.visible = false; 
                 anubis._Idle.visible = true;
-                PlayEnemyEffect();
             };
         } else {
-            canClick = true;
+            if (serpentQueen._HP > 0 || shedu._HP > 0 || anubis._HP > 0) {
+                canClick = true;
+            } else {
+                victory.visible = true;
+            }
         }
     };
+}
+
+function ShowDamege(text, role)
+{    
+    damageText.text = text;
+    damageText.visible = true;
+    damageText.position.set(role._X, role._Y);
+
+    var coords = { x: role._X, y: role._Y };
+    var tween = new TWEEN.Tween(coords)
+        .to({ x: role._X + role._Hit.width * 0.1, y: role._Y - role._Hit.height * 0.25}, 400)
+        .easing(TWEEN.Easing.Quadratic.In)
+        .onUpdate(function() {
+            damageText.x = coords.x;
+            damageText.y = coords.y;
+        })
+        .onComplete(function() {
+            damageText.visible = false;
+        })
+        .start();
 }
