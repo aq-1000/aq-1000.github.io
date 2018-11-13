@@ -103,6 +103,7 @@ Role.prototype = {
             this._Effect = ani;
             this._Effect.loop = true;
         }
+        return ani;
     },
 
     CreateSkillUI:function()
@@ -114,15 +115,16 @@ Role.prototype = {
 
     CreateBloodBar:function()
     {
-        this._BloodBar = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar0.png"].texture);
+        let sheet = PIXI.loader.resources["Assets/Images/Common.json"].spritesheet;
+        this._BloodBar = new PIXI.Sprite(sheet.textures["BloodBar0.png"]);
         this._BloodBar.x = this._X - this._BloodBar.width * 0.5;
         this._BloodBar.y = this._Y - this._Idle.height * 0.22;
         this._Parent.addChild(this._BloodBar);
 
         if (this._Our) {
-            this._InterBar = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar1.png"].texture);
+            this._InterBar = new PIXI.Sprite(sheet.textures["BloodBar1.png"]);
         } else {
-            this._InterBar = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/BloodBar2.png"].texture);
+            this._InterBar = new PIXI.Sprite(sheet.textures["BloodBar2.png"]);
         }
         this._BloodBar.addChild(this._InterBar);
     },

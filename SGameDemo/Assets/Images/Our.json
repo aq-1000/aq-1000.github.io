@@ -2,7 +2,7 @@
 
 "Aladdin_Dead0.png":
 {
-	"frame": {"x":133,"y":925,"w":169,"h":145},
+	"frame": {"x":563,"y":328,"w":169,"h":145},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":82,"y":89,"w":169,"h":145},
@@ -10,7 +10,7 @@
 },
 "Aladdin_Dead1.png":
 {
-	"frame": {"x":1,"y":385,"w":179,"h":155},
+	"frame": {"x":360,"y":1,"w":179,"h":155},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":19,"y":52,"w":179,"h":155},
@@ -26,15 +26,15 @@
 },
 "Aladdin_Dead3.png":
 {
-	"frame": {"x":260,"y":1471,"w":147,"h":159},
+	"frame": {"x":117,"y":508,"w":148,"h":159},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":89,"y":61,"w":147,"h":159},
+	"spriteSourceSize": {"x":88,"y":61,"w":148,"h":159},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Dead4.png":
 {
-	"frame": {"x":850,"y":1162,"w":161,"h":105},
+	"frame": {"x":138,"y":840,"w":161,"h":105},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":83,"y":120,"w":161,"h":105},
@@ -42,135 +42,47 @@
 },
 "Aladdin_Dead5.png":
 {
-	"frame": {"x":443,"y":815,"w":162,"h":106},
-	"rotated": true,
+	"frame": {"x":710,"y":403,"w":162,"h":106},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":82,"y":120,"w":162,"h":106},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Effect0.png":
 {
-	"frame": {"x":574,"y":549,"w":183,"h":175},
-	"rotated": true,
+	"frame": {"x":901,"y":238,"w":99,"h":98},
+	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":4,"w":183,"h":175},
-	"sourceSize": {"w":188,"h":188}
+	"spriteSourceSize": {"x":1,"y":0,"w":99,"h":98},
+	"sourceSize": {"w":106,"h":102}
 },
 "Aladdin_Effect1.png":
 {
-	"frame": {"x":751,"y":728,"w":181,"h":176},
-	"rotated": false,
+	"frame": {"x":901,"y":133,"w":103,"h":98},
+	"rotated": true,
 	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":4,"w":181,"h":176},
-	"sourceSize": {"w":188,"h":188}
+	"spriteSourceSize": {"x":1,"y":2,"w":103,"h":98},
+	"sourceSize": {"w":106,"h":102}
 },
 "Aladdin_Effect2.png":
 {
-	"frame": {"x":574,"y":369,"w":182,"h":178},
-	"rotated": false,
+	"frame": {"x":353,"y":1000,"w":105,"h":97},
+	"rotated": true,
 	"trimmed": true,
-	"spriteSourceSize": {"x":1,"y":3,"w":182,"h":178},
-	"sourceSize": {"w":188,"h":188}
+	"spriteSourceSize": {"x":1,"y":3,"w":105,"h":97},
+	"sourceSize": {"w":106,"h":102}
 },
 "Aladdin_Effect3.png":
 {
-	"frame": {"x":758,"y":548,"w":181,"h":178},
+	"frame": {"x":730,"y":914,"w":97,"h":90},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":1,"y":3,"w":181,"h":178},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect4.png":
-{
-	"frame": {"x":390,"y":369,"w":182,"h":179},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":3,"w":182,"h":179},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect5.png":
-{
-	"frame": {"x":205,"y":187,"w":183,"h":181},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":1,"y":3,"w":183,"h":181},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect6.png":
-{
-	"frame": {"x":390,"y":187,"w":183,"h":180},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":4,"w":183,"h":180},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect7.png":
-{
-	"frame": {"x":771,"y":186,"w":182,"h":182},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":3,"y":4,"w":182,"h":182},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect8.png":
-{
-	"frame": {"x":770,"y":1,"w":183,"h":184},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":3,"y":4,"w":183,"h":184},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect9.png":
-{
-	"frame": {"x":583,"y":1,"w":183,"h":185},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":3,"w":183,"h":185},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect10.png":
-{
-	"frame": {"x":205,"y":1,"w":184,"h":187},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":1,"y":1,"w":184,"h":187},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect11.png":
-{
-	"frame": {"x":583,"y":186,"w":181,"h":186},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":4,"y":2,"w":181,"h":186},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect12.png":
-{
-	"frame": {"x":394,"y":1,"w":184,"h":187},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":1,"w":184,"h":187},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect13.png":
-{
-	"frame": {"x":1,"y":204,"w":182,"h":179},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":3,"y":3,"w":182,"h":179},
-	"sourceSize": {"w":188,"h":188}
-},
-"Aladdin_Effect14.png":
-{
-	"frame": {"x":758,"y":370,"w":184,"h":176},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":4,"w":184,"h":176},
-	"sourceSize": {"w":188,"h":188}
+	"spriteSourceSize": {"x":5,"y":7,"w":97,"h":90},
+	"sourceSize": {"w":106,"h":102}
 },
 "Aladdin_Hit0.png":
 {
-	"frame": {"x":1,"y":931,"w":154,"h":126},
+	"frame": {"x":432,"y":493,"w":154,"h":126},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":65,"y":95,"w":154,"h":126},
@@ -178,23 +90,23 @@
 },
 "Aladdin_Hit1.png":
 {
-	"frame": {"x":667,"y":1362,"w":145,"h":156},
-	"rotated": true,
+	"frame": {"x":416,"y":334,"w":145,"h":157},
+	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":65,"y":80,"w":145,"h":156},
+	"spriteSourceSize": {"x":65,"y":80,"w":145,"h":157},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Hit2.png":
 {
-	"frame": {"x":112,"y":1448,"w":161,"h":146},
+	"frame": {"x":267,"y":367,"w":162,"h":147},
 	"rotated": true,
 	"trimmed": true,
-	"spriteSourceSize": {"x":80,"y":85,"w":161,"h":146},
+	"spriteSourceSize": {"x":79,"y":85,"w":162,"h":147},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Idle0.png":
 {
-	"frame": {"x":133,"y":749,"w":174,"h":145},
+	"frame": {"x":416,"y":158,"w":174,"h":145},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":77,"y":89,"w":174,"h":145},
@@ -202,15 +114,15 @@
 },
 "Aladdin_Idle1.png":
 {
-	"frame": {"x":686,"y":906,"w":172,"h":145},
-	"rotated": false,
+	"frame": {"x":563,"y":153,"w":173,"h":145},
+	"rotated": true,
 	"trimmed": true,
-	"spriteSourceSize": {"x":84,"y":90,"w":172,"h":145},
+	"spriteSourceSize": {"x":83,"y":90,"w":173,"h":145},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Idle2.png":
 {
-	"frame": {"x":125,"y":1096,"w":180,"h":135},
+	"frame": {"x":1,"y":877,"w":180,"h":135},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":75,"y":94,"w":180,"h":135},
@@ -218,23 +130,23 @@
 },
 "Aladdin_Idle3.png":
 {
-	"frame": {"x":551,"y":955,"w":173,"h":132},
-	"rotated": true,
+	"frame": {"x":726,"y":133,"w":173,"h":132},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":77,"y":97,"w":173,"h":132},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Idle4.png":
 {
-	"frame": {"x":117,"y":1278,"w":168,"h":141},
+	"frame": {"x":117,"y":669,"w":169,"h":142},
 	"rotated": true,
 	"trimmed": true,
-	"spriteSourceSize": {"x":81,"y":96,"w":168,"h":141},
+	"spriteSourceSize": {"x":80,"y":96,"w":169,"h":142},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Idle5.png":
 {
-	"frame": {"x":280,"y":971,"w":177,"h":138},
+	"frame": {"x":127,"y":204,"w":177,"h":138},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":72,"y":91,"w":177,"h":138},
@@ -242,55 +154,55 @@
 },
 "Aladdin_Skill0.png":
 {
-	"frame": {"x":545,"y":1130,"w":170,"h":134},
-	"rotated": true,
+	"frame": {"x":710,"y":267,"w":171,"h":134},
+	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":74,"y":89,"w":170,"h":134},
+	"spriteSourceSize": {"x":73,"y":89,"w":171,"h":134},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Skill1.png":
 {
-	"frame": {"x":308,"y":666,"w":175,"h":147},
-	"rotated": false,
+	"frame": {"x":267,"y":190,"w":175,"h":147},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":77,"y":89,"w":175,"h":147},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Skill2.png":
 {
-	"frame": {"x":685,"y":1053,"w":163,"h":151},
+	"frame": {"x":267,"y":531,"w":163,"h":152},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":91,"y":86,"w":163,"h":151},
+	"spriteSourceSize": {"x":91,"y":86,"w":163,"h":152},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Skill3.png":
 {
-	"frame": {"x":280,"y":815,"w":161,"h":154},
+	"frame": {"x":261,"y":685,"w":162,"h":154},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":91,"y":81,"w":161,"h":154},
+	"spriteSourceSize": {"x":91,"y":81,"w":162,"h":154},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Skill4.png":
 {
-	"frame": {"x":260,"y":1313,"w":156,"h":151},
+	"frame": {"x":848,"y":515,"w":156,"h":152},
 	"rotated": true,
 	"trimmed": true,
-	"spriteSourceSize": {"x":91,"y":81,"w":156,"h":151},
+	"spriteSourceSize": {"x":91,"y":81,"w":156,"h":152},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Skill5.png":
 {
-	"frame": {"x":420,"y":979,"w":128,"h":135},
-	"rotated": false,
+	"frame": {"x":829,"y":673,"w":128,"h":135},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":91,"y":89,"w":128,"h":135},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Skill6.png":
 {
-	"frame": {"x":538,"y":1302,"w":127,"h":110},
+	"frame": {"x":874,"y":403,"w":127,"h":110},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":82,"y":102,"w":127,"h":110},
@@ -298,31 +210,31 @@
 },
 "Aladdin_Skill7.png":
 {
-	"frame": {"x":1,"y":542,"w":150,"h":183},
-	"rotated": false,
+	"frame": {"x":541,"y":1,"w":150,"h":183},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":65,"y":44,"w":150,"h":183},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Skill8.png":
 {
-	"frame": {"x":185,"y":370,"w":153,"h":186},
-	"rotated": true,
+	"frame": {"x":205,"y":1,"w":153,"h":187},
+	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":94,"y":47,"w":153,"h":186},
+	"spriteSourceSize": {"x":94,"y":47,"w":153,"h":187},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_Skill9.png":
 {
-	"frame": {"x":681,"y":1206,"w":154,"h":157},
-	"rotated": true,
+	"frame": {"x":245,"y":841,"w":154,"h":157},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":97,"y":63,"w":154,"h":157},
 	"sourceSize": {"w":300,"h":300}
 },
 "Aladdin_UI0.png":
 {
-	"frame": {"x":521,"y":1414,"w":104,"h":104},
+	"frame": {"x":141,"y":1003,"w":104,"h":104},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":104},
@@ -330,7 +242,7 @@
 },
 "Aladdin_UI1.png":
 {
-	"frame": {"x":627,"y":1509,"w":104,"h":104},
+	"frame": {"x":247,"y":1000,"w":104,"h":104},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":104},
@@ -338,39 +250,55 @@
 },
 "Aladdin_UI2.png":
 {
-	"frame": {"x":733,"y":1557,"w":104,"h":104},
+	"frame": {"x":452,"y":987,"w":104,"h":104},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":104},
 	"sourceSize": {"w":104,"h":104}
 },
-"Sinbad_Hit0.png":
+"Sinbad_Effect0.png":
 {
-	"frame": {"x":825,"y":1457,"w":129,"h":98},
+	"frame": {"x":966,"y":673,"w":76,"h":33},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":35,"w":76,"h":33},
+	"sourceSize": {"w":153,"h":68}
+},
+"Sinbad_Effect1.png":
+{
+	"frame": {"x":1,"y":1059,"w":138,"h":55},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":84,"y":131,"w":129,"h":98},
+	"spriteSourceSize": {"x":15,"y":2,"w":138,"h":55},
+	"sourceSize": {"w":153,"h":68}
+},
+"Sinbad_Hit0.png":
+{
+	"frame": {"x":598,"y":915,"w":130,"h":98},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":83,"y":131,"w":130,"h":98},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Hit1.png":
 {
-	"frame": {"x":1,"y":1238,"w":142,"h":114},
-	"rotated": true,
+	"frame": {"x":685,"y":663,"w":142,"h":114},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":47,"y":118,"w":142,"h":114},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Hit2.png":
 {
-	"frame": {"x":1,"y":1087,"w":122,"h":149},
+	"frame": {"x":560,"y":499,"w":123,"h":149},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":84,"y":73,"w":122,"h":149},
+	"spriteSourceSize": {"x":83,"y":73,"w":123,"h":149},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Idle0.png":
 {
-	"frame": {"x":1,"y":1382,"w":109,"h":132},
+	"frame": {"x":487,"y":836,"w":109,"h":132},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":96,"y":89,"w":109,"h":132},
@@ -378,7 +306,7 @@
 },
 "Sinbad_Idle1.png":
 {
-	"frame": {"x":413,"y":1387,"w":106,"h":131},
+	"frame": {"x":598,"y":782,"w":106,"h":131},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":96,"y":91,"w":106,"h":131},
@@ -386,15 +314,15 @@
 },
 "Sinbad_Idle2.png":
 {
-	"frame": {"x":1,"y":1516,"w":108,"h":130},
-	"rotated": false,
+	"frame": {"x":821,"y":803,"w":109,"h":130},
+	"rotated": true,
 	"trimmed": true,
-	"spriteSourceSize": {"x":96,"y":92,"w":108,"h":130},
+	"spriteSourceSize": {"x":95,"y":92,"w":109,"h":130},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Idle3.png":
 {
-	"frame": {"x":840,"y":1325,"w":113,"h":130},
+	"frame": {"x":706,"y":779,"w":113,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":95,"y":91,"w":113,"h":130},
@@ -402,63 +330,63 @@
 },
 "Sinbad_Skill0.png":
 {
-	"frame": {"x":414,"y":1255,"w":122,"h":130},
+	"frame": {"x":560,"y":650,"w":123,"h":130},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":103,"y":95,"w":122,"h":130},
+	"spriteSourceSize": {"x":103,"y":95,"w":123,"h":130},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Skill1.png":
 {
-	"frame": {"x":485,"y":666,"w":83,"h":144},
+	"frame": {"x":401,"y":841,"w":84,"h":144},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":115,"y":81,"w":83,"h":144},
+	"spriteSourceSize": {"x":114,"y":81,"w":84,"h":144},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Skill2.png":
 {
-	"frame": {"x":860,"y":906,"w":94,"h":126},
-	"rotated": false,
+	"frame": {"x":432,"y":649,"w":94,"h":126},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":113,"y":99,"w":94,"h":126},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Skill3.png":
 {
-	"frame": {"x":860,"y":1034,"w":89,"h":126},
-	"rotated": false,
+	"frame": {"x":425,"y":745,"w":89,"h":126},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":101,"y":99,"w":89,"h":126},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Skill4.png":
 {
-	"frame": {"x":420,"y":1116,"w":137,"h":123},
-	"rotated": true,
+	"frame": {"x":127,"y":383,"w":138,"h":123},
+	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":97,"y":102,"w":137,"h":123},
+	"spriteSourceSize": {"x":96,"y":102,"w":138,"h":123},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Skill5.png":
 {
-	"frame": {"x":262,"y":1150,"w":161,"h":150},
-	"rotated": true,
+	"frame": {"x":685,"y":511,"w":161,"h":150},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":104,"y":77,"w":161,"h":150},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Skill6.png":
 {
-	"frame": {"x":308,"y":550,"w":114,"h":226},
-	"rotated": true,
+	"frame": {"x":1,"y":428,"w":114,"h":226},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":75,"y":1,"w":114,"h":226},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_Skill7.png":
 {
-	"frame": {"x":570,"y":734,"w":114,"h":219},
+	"frame": {"x":1,"y":656,"w":114,"h":219},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":75,"y":8,"w":114,"h":219},
@@ -466,7 +394,7 @@
 },
 "Sinbad_Skill8.png":
 {
-	"frame": {"x":182,"y":525,"w":124,"h":222},
+	"frame": {"x":1,"y":204,"w":124,"h":222},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":65,"y":6,"w":124,"h":222},
@@ -474,15 +402,15 @@
 },
 "Sinbad_Skill9.png":
 {
-	"frame": {"x":1,"y":727,"w":202,"h":130},
-	"rotated": true,
+	"frame": {"x":726,"y":1,"w":203,"h":130},
+	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":93,"y":91,"w":202,"h":130},
+	"spriteSourceSize": {"x":93,"y":91,"w":203,"h":130},
 	"sourceSize": {"w":300,"h":300}
 },
 "Sinbad_UI0.png":
 {
-	"frame": {"x":839,"y":1557,"w":104,"h":104},
+	"frame": {"x":558,"y":1015,"w":104,"h":104},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":104},
@@ -490,7 +418,7 @@
 },
 "Sinbad_UI1.png":
 {
-	"frame": {"x":409,"y":1520,"w":104,"h":104},
+	"frame": {"x":664,"y":1015,"w":104,"h":104},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":104},
@@ -498,7 +426,7 @@
 },
 "Sinbad_UI2.png":
 {
-	"frame": {"x":515,"y":1520,"w":104,"h":104},
+	"frame": {"x":829,"y":914,"w":104,"h":104},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":104},
@@ -506,11 +434,12 @@
 }},
 "animations": {
 	"Aladdin_Dead": ["Aladdin_Dead0.png","Aladdin_Dead1.png","Aladdin_Dead2.png","Aladdin_Dead3.png","Aladdin_Dead4.png","Aladdin_Dead5.png"],
-	"Aladdin_Effect": ["Aladdin_Effect0.png","Aladdin_Effect1.png","Aladdin_Effect2.png","Aladdin_Effect3.png","Aladdin_Effect4.png","Aladdin_Effect5.png","Aladdin_Effect6.png","Aladdin_Effect7.png","Aladdin_Effect8.png","Aladdin_Effect9.png","Aladdin_Effect10.png","Aladdin_Effect11.png","Aladdin_Effect12.png","Aladdin_Effect13.png","Aladdin_Effect14.png"],
+	"Aladdin_Effect": ["Aladdin_Effect0.png","Aladdin_Effect1.png","Aladdin_Effect2.png","Aladdin_Effect3.png"],
 	"Aladdin_Hit": ["Aladdin_Hit0.png","Aladdin_Hit1.png","Aladdin_Hit2.png"],
 	"Aladdin_Idle": ["Aladdin_Idle0.png","Aladdin_Idle1.png","Aladdin_Idle2.png","Aladdin_Idle3.png","Aladdin_Idle4.png","Aladdin_Idle5.png"],
 	"Aladdin_Skill": ["Aladdin_Skill0.png","Aladdin_Skill1.png","Aladdin_Skill2.png","Aladdin_Skill3.png","Aladdin_Skill4.png","Aladdin_Skill5.png","Aladdin_Skill6.png","Aladdin_Skill7.png","Aladdin_Skill8.png","Aladdin_Skill9.png"],
 	"Aladdin_UI": ["Aladdin_UI0.png","Aladdin_UI1.png","Aladdin_UI2.png"],
+	"Sinbad_Effect": ["Sinbad_Effect0.png","Sinbad_Effect1.png"],
 	"Sinbad_Hit": ["Sinbad_Hit0.png","Sinbad_Hit1.png","Sinbad_Hit2.png"],
 	"Sinbad_Idle": ["Sinbad_Idle0.png","Sinbad_Idle1.png","Sinbad_Idle2.png","Sinbad_Idle3.png"],
 	"Sinbad_Skill": ["Sinbad_Skill0.png","Sinbad_Skill1.png","Sinbad_Skill2.png","Sinbad_Skill3.png","Sinbad_Skill4.png","Sinbad_Skill5.png","Sinbad_Skill6.png","Sinbad_Skill7.png","Sinbad_Skill8.png","Sinbad_Skill9.png"],
@@ -521,8 +450,8 @@
 	"version": "1.0",
 	"image": "Our.png",
 	"format": "RGBA8888",
-	"size": {"w":956,"h":1662},
+	"size": {"w":1002,"h":1120},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:a91c16dceab64ec7136d2c0e771d4207:313b207998094cb79eeda41336336e69:9121e4818cbc99bab42c3791055408ea$"
+	"smartupdate": "$TexturePacker:SmartUpdate:7a05c271f43d5194c3344c233391271c:3dad5a56f3a0b5faf9fa8dc20fee170a:9121e4818cbc99bab42c3791055408ea$"
 }
 }

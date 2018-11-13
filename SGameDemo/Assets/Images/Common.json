@@ -1,0 +1,249 @@
+{"frames": {
+
+"Activation.png":
+{
+	"frame": {"x":316,"y":1319,"w":75,"h":90},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":5,"w":75,"h":90},
+	"sourceSize": {"w":85,"h":102}
+},
+"BloodBar0.png":
+{
+	"frame": {"x":964,"y":285,"w":98,"h":13},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":98,"h":13},
+	"sourceSize": {"w":98,"h":13}
+},
+"BloodBar1.png":
+{
+	"frame": {"x":964,"y":385,"w":94,"h":7},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":94,"h":7},
+	"sourceSize": {"w":98,"h":13}
+},
+"BloodBar2.png":
+{
+	"frame": {"x":979,"y":285,"w":94,"h":7},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":94,"h":7},
+	"sourceSize": {"w":98,"h":13}
+},
+"Prepare_Effect0.png":
+{
+	"frame": {"x":316,"y":1411,"w":80,"h":80},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":126,"y":118,"w":80,"h":80},
+	"sourceSize": {"w":329,"h":320}
+},
+"Prepare_Effect1.png":
+{
+	"frame": {"x":731,"y":1,"w":281,"h":282},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":34,"y":30,"w":281,"h":282},
+	"sourceSize": {"w":329,"h":320}
+},
+"Prepare_Effect2.png":
+{
+	"frame": {"x":301,"y":446,"w":292,"h":291},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":27,"y":23,"w":292,"h":291},
+	"sourceSize": {"w":329,"h":320}
+},
+"Prepare_Effect3.png":
+{
+	"frame": {"x":1,"y":446,"w":298,"h":298},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":18,"w":298,"h":298},
+	"sourceSize": {"w":329,"h":320}
+},
+"Prepare_Effect4.png":
+{
+	"frame": {"x":1,"y":746,"w":295,"h":296},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":16,"w":295,"h":296},
+	"sourceSize": {"w":329,"h":320}
+},
+"Prepare_Effect5.png":
+{
+	"frame": {"x":130,"y":1044,"w":273,"h":273},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":29,"y":24,"w":273,"h":273},
+	"sourceSize": {"w":329,"h":320}
+},
+"Prepare_Effect6.png":
+{
+	"frame": {"x":731,"y":285,"w":231,"h":227},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":50,"y":49,"w":231,"h":227},
+	"sourceSize": {"w":329,"h":320}
+},
+"Skill_Selected0.png":
+{
+	"frame": {"x":593,"y":1076,"w":184,"h":177},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":184,"h":177},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected1.png":
+{
+	"frame": {"x":405,"y":1114,"w":185,"h":183},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":185,"h":183},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected2.png":
+{
+	"frame": {"x":405,"y":1299,"w":182,"h":178},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":182,"h":178},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected3.png":
+{
+	"frame": {"x":592,"y":1255,"w":183,"h":178},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":183,"h":178},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected4.png":
+{
+	"frame": {"x":777,"y":1261,"w":183,"h":179},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":3,"w":183,"h":179},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected5.png":
+{
+	"frame": {"x":782,"y":892,"w":184,"h":182},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":184,"h":182},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected6.png":
+{
+	"frame": {"x":405,"y":928,"w":186,"h":184},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":186,"h":184},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected7.png":
+{
+	"frame": {"x":779,"y":1076,"w":184,"h":183},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":184,"h":183},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected8.png":
+{
+	"frame": {"x":785,"y":704,"w":185,"h":186},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":185,"h":186},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected9.png":
+{
+	"frame": {"x":405,"y":739,"w":187,"h":188},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":188},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected10.png":
+{
+	"frame": {"x":784,"y":514,"w":186,"h":188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":186,"h":188},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected11.png":
+{
+	"frame": {"x":595,"y":704,"w":186,"h":188},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":186,"h":188},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected12.png":
+{
+	"frame": {"x":595,"y":514,"w":187,"h":188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":188},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected13.png":
+{
+	"frame": {"x":595,"y":892,"w":185,"h":182},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":185,"h":182},
+	"sourceSize": {"w":188,"h":188}
+},
+"Skill_Selected14.png":
+{
+	"frame": {"x":130,"y":1319,"w":184,"h":176},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":4,"w":184,"h":176},
+	"sourceSize": {"w":188,"h":188}
+},
+"SkillUI.png":
+{
+	"frame": {"x":1,"y":1044,"w":448,"h":127},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":0,"w":448,"h":127},
+	"sourceSize": {"w":453,"h":127}
+},
+"Target.png":
+{
+	"frame": {"x":595,"y":446,"w":59,"h":58},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":5,"w":59,"h":58},
+	"sourceSize": {"w":69,"h":69}
+},
+"Victory.png":
+{
+	"frame": {"x":1,"y":1,"w":728,"h":443},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":40,"y":71,"w":728,"h":443},
+	"sourceSize": {"w":801,"h":528}
+}},
+"animations": {
+	"BloodBar": ["BloodBar0.png","BloodBar1.png","BloodBar2.png"],
+	"Prepare_Effect": ["Prepare_Effect0.png","Prepare_Effect1.png","Prepare_Effect2.png","Prepare_Effect3.png","Prepare_Effect4.png","Prepare_Effect5.png","Prepare_Effect6.png"],
+	"Skill_Selected": ["Skill_Selected0.png","Skill_Selected1.png","Skill_Selected2.png","Skill_Selected3.png","Skill_Selected4.png","Skill_Selected5.png","Skill_Selected6.png","Skill_Selected7.png","Skill_Selected8.png","Skill_Selected9.png","Skill_Selected10.png","Skill_Selected11.png","Skill_Selected12.png","Skill_Selected13.png","Skill_Selected14.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "Common.png",
+	"format": "RGBA8888",
+	"size": {"w":1013,"h":1496},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:286f23faac630d209cffa360a6485aac:51e309ce6b0b8454245e4ad6ffba0936:8653715cce6c34f46995de640ca55b16$"
+}
+}
