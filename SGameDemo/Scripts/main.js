@@ -80,6 +80,10 @@ function onAssetsLoaded()
         background.y -= (background.height - windowHeight);     // 图片底部和窗口持平
     }
 
+    background.interactive = true;
+    background.click = SelectSkill;
+    background.touchend = SelectSkill;
+
     // aladdin
     var sheet = PIXI.loader.resources["Assets/Images/Our.json"].spritesheet;
     aladdin = new Role("Aladdin", background, sheet, true, BGWidth * 0.15, BGHeight * 0.55, 33000);
@@ -151,9 +155,9 @@ function onAssetsLoaded()
     skillUI = new PIXI.Sprite(sheet.textures["SkillUI.png"]);
     skillUI.x = BGWidth - skillUI.width;
     skillUI.y = BGHeight - skillUI.height;
-    skillUI.interactive = true;
-    skillUI.click = SelectSkill;
-    skillUI.touchend = SelectSkill;
+    // skillUI.interactive = true;
+    // skillUI.click = SelectSkill;
+    // skillUI.touchend = SelectSkill;
     background.addChild(skillUI);
     UpdateTurn();
     SelectAnubis();
