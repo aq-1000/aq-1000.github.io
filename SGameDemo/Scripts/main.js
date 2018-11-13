@@ -82,7 +82,7 @@ function onAssetsLoaded()
 
     // aladdin
     var sheet = PIXI.loader.resources["Assets/Images/Our.json"].spritesheet;
-    aladdin = new Role("Aladdin", background, sheet, true, BGWidth * 0.15, BGHeight * 0.6, 33000);
+    aladdin = new Role("Aladdin", background, sheet, true, BGWidth * 0.15, BGHeight * 0.55, 33000);
     aladdin.CreateAnimation("Idle", aniSpeed);
     aladdin.CreateAnimation("Hit", aniSpeed);
     aladdin.CreateAnimation("Dead", aniSpeed * 1.5);
@@ -92,7 +92,7 @@ function onAssetsLoaded()
     aladdin.CreateBloodBar();
 
     // sinbad
-    sinbad = new Role("Sinbad", background, sheet, true, BGWidth * 0.15, BGHeight * 0.8, 33000);
+    sinbad = new Role("Sinbad", background, sheet, true, BGWidth * 0.15, BGHeight * 0.75, 33000);
     sinbad.CreateAnimation("Idle", aniSpeed);
     sinbad.CreateAnimation("Hit", aniSpeed);
     sinbad.CreateAnimation("Skill", aniSpeed * 2);
@@ -102,14 +102,14 @@ function onAssetsLoaded()
 
     // serpentQueen
     sheet = PIXI.loader.resources["Assets/Images/Enemy.json"].spritesheet;
-    serpentQueen = new Role("SerpentQueen", background, sheet, false, BGWidth * 0.85, BGHeight * 0.55, 1024);
+    serpentQueen = new Role("SerpentQueen", background, sheet, false, BGWidth * 0.85, BGHeight * 0.5, 1024);
     serpentQueen.CreateAnimation("Idle", aniSpeed);
     serpentQueen.CreateAnimation("Hit", aniSpeed);
     serpentQueen.CreateAnimation("Dead", aniSpeed * 2);
     serpentQueen.CreateBloodBar();
     
     // anubis
-    anubis = new Role("Anubis", background, sheet, false, BGWidth * 0.85, BGHeight * 0.68, 65535);
+    anubis = new Role("Anubis", background, sheet, false, BGWidth * 0.85, BGHeight * 0.63, 65535);
     anubis.CreateAnimation("Idle", aniSpeed);
     anubis.CreateAnimation("Hit", aniSpeed);
     anubis.CreateAnimation("Dead", aniSpeed * 2);
@@ -118,7 +118,7 @@ function onAssetsLoaded()
     anubis.CreateBloodBar();
 
     // shedu
-    shedu = new Role("Shedu", background, sheet, false, BGWidth * 0.85, BGHeight * 0.825, 1024);
+    shedu = new Role("Shedu", background, sheet, false, BGWidth * 0.85, BGHeight * 0.775, 1024);
     shedu.CreateAnimation("Idle", aniSpeed);
     shedu.CreateAnimation("Hit", aniSpeed);
     shedu.CreateAnimation("Dead", aniSpeed * 2);
