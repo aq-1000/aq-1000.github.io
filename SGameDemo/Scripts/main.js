@@ -280,10 +280,10 @@ function UpdateTurn()
         .start();
     
     if (currentTurn == 0) {
-        promptText.text = "      لا تدع أبطالك يخسرون \nقم بالضغط على المهارة لبدأ القتال";
+        promptText.text = "       لا تدع أبطالك يخسرون \nقم بالضغط على المهارة لبدأ القتال";
         prompt.visible = true;
     } else if (currentTurn == 1) {
-        promptText.text = "         ! لقد تلقيت ضربة  \n! قم بعلاج صديق بتلك المهارة الفتاكة";
+        promptText.text = "            ! لقد تلقيت ضربة  \n! قم بعلاج صديق بتلك المهارة الفتاكة";
         prompt.visible = true;
     }
     
