@@ -40,6 +40,10 @@ let activateRole = null;
 let targetRole = null;
 let currentTurn = 0;
 
+promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 22, fill: "yellow"});
+promptText.anchor.set(0.5);
+app.stage.addChild(promptText);
+
 // 加载静态图
 PIXI.loader
     .add("Assets/Images/Background.png")
@@ -49,6 +53,8 @@ PIXI.loader
     .add("Assets/Images/Common.json")
     .on("progress", function(){
         // do something when loading
+        promptText.text = "Loading:" + PIXI.loader.progress + "%";
+//        console.log("Loading:" + PIXI.loader.progress + "%");
     })
     .load(onAssetsLoaded);
 
@@ -191,8 +197,6 @@ function onAssetsLoaded()
     prompt.scale.y = gScale;
     prompt.visible = true;
     app.stage.addChild(prompt);
-    promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 22, fill: "yellow"});
-    promptText.anchor.set(0.5);
     prompt.addChild(promptText);
 
     // 胜利
