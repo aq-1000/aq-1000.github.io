@@ -17,6 +17,9 @@ document.body.appendChild(app.view);
 //app.renderer.resize(window.innerWidth, window.innerHeight);
 
 let background  = null;
+let endImage = null;
+let prompt = null;
+let promptText = null;  // 提示框文字
 let aladdin = null;
 let sinbad = null;
 let anubis = null;
@@ -24,9 +27,9 @@ let serpentQueen = null;
 let shedu = null;
 let skillUI = null;
 let victory = null;
-let activateArrow = null;
-let targetArrow = null;
-//let damageText = null;  // 伤害飘字
+let activateCircle = null;
+let targetCircle = null;
+let selectArrow = null;
 let aniSpeed = 0.06;
 let prepareEffect = null;
 let skillUIEffect = null;
@@ -40,6 +43,7 @@ let currentTurn = 0;
 // 加载静态图
 PIXI.loader
     .add("Assets/Images/Background.png")
+    .add("Assets/Images/end.png")
     .add("Assets/Images/Our.json")
     .add("Assets/Images/Enemy.json")
     .add("Assets/Images/Common.json")
@@ -84,8 +88,32 @@ function onAssetsLoaded()
     background.click = SelectSkill;
     background.touchend = SelectSkill;
 
+    // end图
+    endImage = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/end.png"].texture);
+    endImage.x = background.x;
+    endImage.y = background.y;
+    endImage.width = background.width;
+    endImage.height = background.height;
+    endImage.visible = false;
+    endImage.interactive = true;
+    // endImage.click = SelectSkill;
+    // endImage.touchend = SelectSkill;
+
+    // 激活目标
+    var sheet = PIXI.loader.resources["Assets/Images/Common.json"].spritesheet;
+    activateCircle = new PIXI.extras.AnimatedSprite(sheet.animations["Activation"]);
+    activateCircle.anchor.set(0.5);
+    activateCircle.loop = true;
+    activateCircle.animationSpeed = aniSpeed * 4;
+    background.addChild(activateCircle);
+    targetCircle = new PIXI.extras.AnimatedSprite(sheet.animations["Target"]);
+    targetCircle.anchor.set(0.5);
+    targetCircle.loop = true;
+    targetCircle.animationSpeed = aniSpeed * 4;
+    background.addChild(targetCircle);
+
     // aladdin
-    var sheet = PIXI.loader.resources["Assets/Images/Our.json"].spritesheet;
+    sheet = PIXI.loader.resources["Assets/Images/Our.json"].spritesheet;
     aladdin = new Role("Aladdin", background, sheet, true, BGWidth * 0.15, BGHeight * 0.55, 33000);
     aladdin.CreateAnimation("Idle", aniSpeed);
     aladdin.CreateAnimation("Hit", aniSpeed);
@@ -100,7 +128,7 @@ function onAssetsLoaded()
     sinbad.CreateAnimation("Idle", aniSpeed);
     sinbad.CreateAnimation("Hit", aniSpeed);
     sinbad.CreateAnimation("Skill", aniSpeed * 2);
-    sinbad.CreateAnimation("Effect", aniSpeed);
+    // sinbad.CreateAnimation("Effect", aniSpeed);
     sinbad.CreateSkillUI();
     sinbad.CreateBloodBar();
 
@@ -118,7 +146,7 @@ function onAssetsLoaded()
     anubis.CreateAnimation("Hit", aniSpeed);
     anubis.CreateAnimation("Dead", aniSpeed * 2);
     anubis.CreateAnimation("Skill", aniSpeed * 2);
-    anubis.CreateAnimation("Effect", aniSpeed);
+    anubis.CreateAnimation("Effect", aniSpeed * 3);
     anubis.CreateBloodBar();
 
     // shedu
@@ -140,16 +168,8 @@ function onAssetsLoaded()
     // skillUIEffect
     skillUIEffect  = new PIXI.extras.AnimatedSprite(sheet.animations["Skill_Selected"]);
     skillUIEffect.anchor.set(0.5);
-    skillUIEffect.animationSpeed = aniSpeed * 4;
+    skillUIEffect.animationSpeed = aniSpeed * 2;
     skillUIEffect.loop = true;
-
-    // 激活目标
-    activateArrow = new PIXI.Sprite(sheet.textures["Activation.png"]);
-    targetArrow = new PIXI.Sprite(sheet.textures["Target.png"]);
-    activateArrow.anchor.set(0.5);
-    targetArrow.anchor.set(0.5);
-    background.addChild(activateArrow);
-    background.addChild(targetArrow);
 
     // 技能UI
     skillUI = new PIXI.Sprite(sheet.textures["SkillUI.png"]);
@@ -159,8 +179,21 @@ function onAssetsLoaded()
     // skillUI.click = SelectSkill;
     // skillUI.touchend = SelectSkill;
     background.addChild(skillUI);
-    UpdateTurn();
-    SelectAnubis();
+    selectArrow = new PIXI.Sprite(sheet.textures["SelectArrow.png"]);
+    selectArrow.anchor.set(0.5);
+
+    // 提示框
+    prompt = new PIXI.Sprite(sheet.textures["Prompt.png"]);
+    prompt.anchor.set(0.5);
+    prompt.x = windowWidth * 0.5;
+    prompt.y = windowHeight * 0.5;
+    prompt.scale.x = gScale;
+    prompt.scale.y = gScale;
+    prompt.visible = true;
+    app.stage.addChild(prompt);
+    promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 22, fill: "yellow"});
+    promptText.anchor.set(0.5);
+    prompt.addChild(promptText);
 
     // 胜利
     victory = new PIXI.Sprite(sheet.textures["Victory.png"]);
@@ -172,11 +205,8 @@ function onAssetsLoaded()
     victory.visible = false;
     app.stage.addChild(victory);
 
-    // 伤害飘字
-    // damageText = new PIXI.Text("-65535", {fontFamily: "Arial", fontSize: 22, fill: "red"});
-    // damageText.visible = false;
-    // damageText.anchor.set(0.5);
-    // background.addChild(damageText);
+    UpdateTurn();
+    SelectAnubis();
 }
 
 function UpdateTurn()
@@ -211,28 +241,42 @@ function UpdateTurn()
         skillUI.addChild(skillUIEffect);
         skillUIEffect.x = skillUI.width * 0.5;
         skillUIEffect.y = skillUI.height * 0.48;
+        selectArrow.x = skillUI.width * 0.5;
+        selectArrow.y = skillUI.height * 0.1;
     } else {
         skillUI.addChild(skillUIEffect);
         skillUIEffect.x = skillUI.width * 0.18;
         skillUIEffect.y = skillUI.height * 0.48;
+        selectArrow.x = skillUI.width * 0.186;
+        selectArrow.y = skillUI.height * 0.1;
     }
     skillUIEffect.gotoAndPlay(0);
+    skillUI.addChild(selectArrow);
 
-
-    activateArrow.x = activateRole._X;
-    activateArrow.y = activateRole._Y - activateRole._Idle.height * 0.33;
+    activateCircle.x = activateRole._X;
+    activateCircle.y = activateRole._Y + activateRole._Idle.height * 0.23;
+    activateCircle.gotoAndPlay(0);
 
     // 箭头上下抖动
-    var coords = { x: 0, y: activateArrow.y };
+    var coords = { x: 0, y: selectArrow.y };
     var tween = new TWEEN.Tween(coords)
-        .to({ x: Math.PI, y: activateArrow.y}, 600)
+        .to({ x: Math.PI, y: selectArrow.y}, 600)
         .easing(TWEEN.Easing.Linear.None)
         .onUpdate(function() {
-            activateArrow.y = coords.y - activateArrow.height * 0.15 * Math.sin(coords.x);
-            activateArrow.visible = true;
+            selectArrow.y = coords.y - selectArrow.height * 0.15 * Math.sin(coords.x);
+            selectArrow.visible = true;
         })
         .repeat(Infinity)
         .start();
+    
+    if (currentTurn == 0) {
+        promptText.text = "      لا تدع أبطالك يخسرون \nقم بالضغط على المهارة لبدأ القتال";
+        prompt.visible = true;
+    } else if (currentTurn == 1) {
+        promptText.text = "         ! لقد تلقيت ضربة  \n! م بعلاج صديق بتلك المهارة الفتاكة";
+        prompt.visible = true;
+    }
+    
 }
 
 function SelectAnubis()
@@ -241,20 +285,9 @@ function SelectAnubis()
         return;
     }
     targetRole = anubis;
-    targetArrow.x = targetRole._X;
-    targetArrow.y = targetRole._Y - targetRole._Idle.height * 0.29;
-
-    // 箭头上下抖动
-    var coords = { x: 0, y: targetArrow.y };
-    var tween = new TWEEN.Tween(coords)
-        .to({ x: Math.PI, y: targetArrow.y}, 600)
-        .easing(TWEEN.Easing.Linear.None)
-        .onUpdate(function() {
-            targetArrow.y = coords.y - targetArrow.height * 0.15 * Math.sin(coords.x);
-            targetArrow.visible = true;
-        })
-        .repeat(Infinity)
-        .start();
+    targetCircle.x = targetRole._X;
+    targetCircle.y = targetRole._Y + targetRole._Idle.height * 0.24;
+    targetCircle.gotoAndPlay(0);
 }
 
 function SelectSkill()
@@ -262,6 +295,13 @@ function SelectSkill()
     if (!canClick) {
         return;
     }
+
+    if (victory.visible) {
+        endImage.visible = true;
+        app.stage.addChild(endImage);
+        return;
+    }
+    prompt.visible = false;
     canClick = false;
     activateRole.Skill();
     prepareEffect.visible = true;
@@ -292,7 +332,6 @@ function SelectSkill()
 function PlaySinbadEffect0(target, damege)
 {
     var effect = sinbad.CreateAnimation("Effect", aniSpeed);
-    effect.loop = false;
     var coords = { x: sinbad._X, y: sinbad._Y }; // Start at (0, 0)
     var tween0 = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
         .to({ x: target._X, y: target._Y }, 500) // Move to (300, 200) in 1 second.
@@ -318,18 +357,18 @@ function PlayAladdinEffect(target, damege)
     aladdin._Effect.scale.x = 2;
     aladdin._Effect.scale.y = 2;
     aladdin._Effect.visible = true;
-    aladdin._Effect.loop = false;
     aladdin._Effect.gotoAndPlay(0);
     aladdin._Effect.onComplete = function() {
         aladdin._Effect.visible = false;
 
-        ShowDamege(-aladdin._MAXHP * 0.5, aladdin);
-        aladdin._HP *= 0.5;
-        if (aladdin._HP <= 0) {
-            aladdin._InterBar.scale.x = 0;
-        } else {
-            aladdin._InterBar.scale.x = aladdin._HP / aladdin._MAXHP;
-        }
+        // 阿拉丁自己扣血
+        // ShowDamege(-aladdin._MAXHP * 0.5, aladdin);
+        // aladdin._HP *= 0.5;
+        // if (aladdin._HP <= 0) {
+        //     aladdin._InterBar.scale.x = 0;
+        // } else {
+        //     aladdin._InterBar.scale.x = aladdin._HP / aladdin._MAXHP;
+        // }
 
         ShowDamege(damege, target);
         target._HP += damege;
@@ -350,7 +389,6 @@ function PlayAladdinEffect(target, damege)
 function PlaySinbadEffect1(index, target, damege)
 {
     var effect = sinbad.CreateAnimation("Effect", aniSpeed);
-    effect.loop = false;
     var coords = { x: sinbad._X, y: sinbad._Y }; // Start at (0, 0)
     var tween0 = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
         .to({ x: target._X, y: target._Y }, 800 - index * 150) // Move to (300, 200) in 1 second.
@@ -402,8 +440,15 @@ function TargetHit(target, damege)
                 // UpdateTurn();
             }
             else {
-                targetArrow.visible = false;
+                canClick = true;
+                targetCircle.visible = false;
                 victory.visible = true;
+                setTimeout(function() {
+                    if (!endImage.visible) {
+                        endImage.visible = true;
+                        app.stage.addChild(endImage);
+                    }
+                }, 1000);
             }
         }
     };
@@ -428,6 +473,13 @@ function AttackBack(damege) {
             })
             .onComplete(function () {
                 activateRole.Hit();
+
+                // anubis特效
+                anubis._Effect.visible = true;
+                anubis._Effect.gotoAndPlay(0);
+                anubis._Effect.x = activateRole._X;
+                anubis._Effect.y = activateRole._Y;
+
                 ShowDamege(damege, activateRole);
                 activateRole._HP += damege;
                 if (activateRole._HP <= 0) {

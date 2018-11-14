@@ -101,7 +101,6 @@ Role.prototype = {
             this._Walk = ani;
         } else if (aniName == "Effect") {
             this._Effect = ani;
-            this._Effect.loop = true;
         }
         return ani;
     },
