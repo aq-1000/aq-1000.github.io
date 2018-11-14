@@ -40,7 +40,7 @@ let activateRole = null;
 let targetRole = null;
 let currentTurn = 0;
 
-promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 30, fill: "yellow"});
+promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 40, fill: "yellow"});
 promptText.anchor.set(0.5);
 promptText.x = windowWidth * 0.5;
 promptText.y = windowHeight * 0.5;
@@ -283,7 +283,7 @@ function UpdateTurn()
         promptText.text = "      لا تدع أبطالك يخسرون \nقم بالضغط على المهارة لبدأ القتال";
         prompt.visible = true;
     } else if (currentTurn == 1) {
-        promptText.text = "         ! لقد تلقيت ضربة  \n! م بعلاج صديق بتلك المهارة الفتاكة";
+        promptText.text = "         ! لقد تلقيت ضربة  \n! قم بعلاج صديق بتلك المهارة الفتاكة";
         prompt.visible = true;
     }
     
