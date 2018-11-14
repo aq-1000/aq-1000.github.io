@@ -40,7 +40,7 @@ let activateRole = null;
 let targetRole = null;
 let currentTurn = 0;
 
-promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 28, fill: "yellow"});
+promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 30, fill: "yellow"});
 promptText.anchor.set(0.5);
 promptText.x = windowWidth * 0.5;
 promptText.y = windowHeight * 0.5;
@@ -106,8 +106,8 @@ function onAssetsLoaded()
     endImage.height = background.height;
     endImage.visible = false;
     endImage.interactive = true;
-    // endImage.click = SelectSkill;
-    // endImage.touchend = SelectSkill;
+    endImage.click = SkipUrl;
+    endImage.touchend = SkipUrl;
 
     // 激活目标
     var sheet = PIXI.loader.resources["Assets/Images/Common.json"].spritesheet;
@@ -298,6 +298,11 @@ function SelectAnubis()
     targetCircle.x = targetRole._X;
     targetCircle.y = targetRole._Y + targetRole._Idle.height * 0.24;
     targetCircle.gotoAndPlay(0);
+}
+
+function SkipUrl()
+{
+    window.location.href='http://www.baidu.com';
 }
 
 function SelectSkill()
@@ -531,9 +536,9 @@ function ShowDamege(text, role)
 {
     var damageText = null;
     if (text < 0) {
-        damageText = new PIXI.Text(text, {fontFamily: "Arial", fontSize: 28, fill: "red"});
+        damageText = new PIXI.Text(text, {fontFamily: "Arial", fontSize: 30, fill: "red"});
     } else {
-        damageText = new PIXI.Text("+" + text, {fontFamily: "Arial", fontSize: 28, fill: "green"});
+        damageText = new PIXI.Text("+" + text, {fontFamily: "Arial", fontSize: 30, fill: "green"});
     }
         
     damageText.anchor.set(0.5);
