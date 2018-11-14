@@ -42,6 +42,8 @@ let currentTurn = 0;
 
 promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 22, fill: "yellow"});
 promptText.anchor.set(0.5);
+promptText.x = windowWidth * 0.5;
+promptText.y = windowHeight * 0.5;
 app.stage.addChild(promptText);
 
 // 加载静态图
@@ -68,6 +70,8 @@ requestAnimationFrame(animate);
 // 背景图加载完成
 function onAssetsLoaded()
 {
+    app.stage.removeChild(promptText);
+
     // 背景图
     background = new PIXI.Sprite(PIXI.loader.resources["Assets/Images/Background.png"].texture);
     BGWidth = background.width;
@@ -197,6 +201,8 @@ function onAssetsLoaded()
     prompt.scale.y = gScale;
     prompt.visible = true;
     app.stage.addChild(prompt);
+    promptText.x = 0;
+    promptText.y = 0;
     prompt.addChild(promptText);
 
     // 胜利
