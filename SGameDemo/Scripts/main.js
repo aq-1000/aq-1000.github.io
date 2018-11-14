@@ -40,7 +40,7 @@ let activateRole = null;
 let targetRole = null;
 let currentTurn = 0;
 
-promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 22, fill: "yellow"});
+promptText = new PIXI.Text("", {fontFamily: "Arial", fontSize: 28, fill: "yellow"});
 promptText.anchor.set(0.5);
 promptText.x = windowWidth * 0.5;
 promptText.y = windowHeight * 0.5;
@@ -531,9 +531,9 @@ function ShowDamege(text, role)
 {
     var damageText = null;
     if (text < 0) {
-        damageText = new PIXI.Text(text, {fontFamily: "Arial", fontSize: 22, fill: "red"});
+        damageText = new PIXI.Text(text, {fontFamily: "Arial", fontSize: 28, fill: "red"});
     } else {
-        damageText = new PIXI.Text("+" + text, {fontFamily: "Arial", fontSize: 22, fill: "green"});
+        damageText = new PIXI.Text("+" + text, {fontFamily: "Arial", fontSize: 28, fill: "green"});
     }
         
     damageText.anchor.set(0.5);
